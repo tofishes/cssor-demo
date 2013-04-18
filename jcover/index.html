@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> ToFishes - jQuery插件jCover锁定层 演示 </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="tofishes@163.com" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <!-- 引入样式 -->
+  <link rel="stylesheet" type="text/css" href="../global.css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jCover-tofishes-1.0.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+	$("pre").each(function(i){
+        var code = $(this).html();
+        eval(code);
+	});
+  });
+  </script>
+  <style type="text/css">
+  #trigger {margin:20px 0;padding-top:10px;}
+  #trigger a {margin:0 10px 0 0;padding:5px 10px;border:1px solid #ccc;}
+  </style>
+ </head>
+
+ <body>
+ <div class="wrap">
+	<h1><a href="http://cssor.com">Made By ToFishes~</a></h1>
+  <p>打包下载链接：<a class="download" href="jCover-tofishes-1.0.zip">jCover-tofishes-1.0.zip</a></p>
+  <p>目前用比较精简的代码实现blockUI那样的效果</p>
+
+
+<div style="margin:30px;">
+
+    <div id="jcover" style="padding:20px;height:200px;width:500px;border:5px solid #f66;">
+        这个是id为jcover的div元素，用来演示元素锁定。
+        <p>添加一个select元素测试IE6下的效果：</p>
+        <select>
+            <option>IE6下使用css隐藏，和iframe遮盖效果一样</option>
+        </select>
+        <p>select下面的文字</p>
+    </div>
+
+    <p id="trigger">
+        <a name="full">全屏锁</a>
+        <a name="element">锁定id为jcover的元素</a>
+        <a name="msg">元素锁并加一些提示</a>
+    </p>
+    <p>3秒后自动解锁，等不及可以刷新页面 ^_^</p>
+</div>
+ 
+<h6>调用的代码：</h6>
+<pre>
+    var timeId;
+    var cover = {
+        full: function(){
+
+            $.jCover(); //锁全屏
+
+
+            setTimeout(function(){
+                $.jUnCover(); //解锁
+            }, 3000); //3秒后解除全屏锁
+        },
+        element: function(){
+            if(timeId)
+                clearTimeout(timeId);
+
+
+            $("#jcover").jCover({
+                cache: false //需要关闭缓存，因为同一个元素将使用不同的提示
+            }); //锁定id为jcover的元素
+
+
+            timeId = setTimeout(function(){
+                $("#jcover").jUnCover(); //解锁
+            }, 3000); //3秒后解除id为jcover元素的锁
+        },
+        msg: function(){
+            if(timeId)
+                clearTimeout(timeId);
+
+
+            $("#jcover").jCover({
+                msg: "界面锁定中，3秒后自动解锁，请稍等",
+                msgCss: {
+                    background:"#f60",
+                    padding:"10px",
+                    left: 100,
+                    top:100
+                },
+                cache: false //需要关闭缓存，因为同一个元素将使用不同的提示             
+            }); //锁定id为jcover的元素
+
+
+            timeId = setTimeout(function(){
+                $("#jcover").jUnCover(); //解锁
+            }, 3000); //3秒后解除id为jcover元素的锁
+        }
+    };
+    
+    $("#trigger a").click(function(){
+        var key = $(this).attr("name");
+        cover[key]();
+    });
+</pre>
+	
+ </div>
+ </body>
+</html>

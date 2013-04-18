@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> ToFishes系列jQuery插件 - jFocus焦点图淡入淡出</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="tofishes@163.com" />
+  <meta name="keywords" content="ToFishes,jQuery plugin" />
+  <meta name="description" content="ToFishes系列jQuery插件 - jFocus焦点图淡入淡出" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jFocus-tofishes-1.0.pack.js"></script>
+  <link rel="stylesheet" href="http://demo.cssor.com/global.css" type="text/css" />
+  <link rel="stylesheet" href="jfocus.css" type="text/css" />
+  <style type="text/css">
+/* 选择器的高宽会被自动获取 */
+.focus { margin:100px auto;width:700px; height: 228px; text-align:left;}
+h6 {margin:0 0 5px;}
+a:hover {text-decoration:underline;}
+  </style>
+  <script type="text/javascript">
+  <!--
+	$(function(){
+		$(".focus").jFocus({event:"click",auto:1,time:2000});
+		/*
+		可用的配置项目：
+		{
+            meta: "li", //指定需要循环切换的元素标签
+            event: "click", //绑定触发切换的事件，比如设置为mouseover
+            currClass: "curr", //当前数字高亮的class
+            firstShow: 0, //指定第一次显示的图片索引，从0开始
+            width: 0, //设置一个宽度，默认0代表自动获取宽度，如果获取失败可以尝试手动设置
+            height:0, //设置一个高度，默认0代表自动获取高度，如果获取失败可以尝试手动设置
+
+            auto: 0, //是否开启自动切换,默认否
+            time: 3000 //自动切换的时间间隔
+        }
+		
+		*/
+	});
+  //-->
+  </script>
+ </head>
+
+ <body>
+<div class="wrap">
+	<h1><a href="http://www.cssor.com/" title="ToFishes~">Made In ToFishes~</a></h1>
+	<p>点击打包下载：  <a href="jFocus-tofishes-1.0.zip">jQuery插件jFocus-1.0</a></p>
+	<!-- 焦点图切换及指导，结构理论上自定义，但需要两个class指定元素： .img 和 .infos，这两个不可少 -->
+	<div class="focus">
+		<ul>
+			<li><img class="img" src="img/tmp-focus1.jpg" alt="" />
+				<div class="infos">
+					<h6><a href="" title="">上海世博建设全接触</a></h6>
+					<p class="desc">这图的描述，随便点，想描述什么描述什么，但是是个简述，字数不要太多的好</p>
+				</div>
+			</li>
+			<li><img class="img" src="img/tmp-focus2.jpg" alt="" />
+				<div class="infos">
+					<h6><a href="" title="">绿叶丛中隐藏的小猎手</a></h6>
+					<p class="desc">这图的描述，随便点，想描述什么描述什么，但是是个简述，字数不要太多的好</p>
+				</div>
+			</li>
+			<li><img class="img" src="img/tmp-focus0.jpg" alt="" />
+				<div class="infos">
+					<h6><a href="" title="">Elva的壁纸秀</a></h6>
+					<p class="desc">这图的描述，随便点，想描述什么描述什么，但是是个简述，字数不要太多的好</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- 焦点图切换，更换结构顺序，是没有影响的 -->
+	<div class="focus">
+		<ul>
+			<li>
+				<div class="infos">
+					<h6><a href="" title="">上海世博建设全接触</a></h6>
+					<p class="desc">这图的描述，随便点，想描述什么描述什么，但是是个简述，字数不要太多的好</p>
+				</div>
+				<img class="img" src="img/tmp-focus1.jpg" alt="" />
+			</li>
+			<li>
+				<div class="infos">
+					<h6><a href="" title="">绿叶丛中隐藏的小猎手</a></h6>
+					<p class="desc">这图的描述，随便点，想描述什么描述什么，但是是个简述，字数不要太多的好</p>
+				</div>
+				<img class="img" src="img/tmp-focus2.jpg" alt="" />
+			</li>
+			<li>
+				<div class="infos">
+					<h6><a href="" title="">Elva的壁纸秀</a></h6>
+					<p class="desc">这图的描述，随便点，想描述什么描述什么，但是是个简述，字数不要太多的好</p>
+				</div>
+				<img class="img" src="img/tmp-focus0.jpg" alt="" />
+			</li>
+		</ul>
+	</div>
+</div>
+ </body>
+</html>

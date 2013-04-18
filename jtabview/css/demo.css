@@ -1,0 +1,42 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, 
+ul, ol, li, pre, form, fieldset, lengend, button, input, textarea,th, td {
+    margin: 0;  padding: 0; }
+body,button, input, select, textarea { font-family:宋体, Tahoma, Helvetica, Arial, sans-serif; }
+h2 ,h4{ font-size:14px; }
+h3,h5,h6 { font-size: 12px; }
+address, cite, em, dfn{ font-style: normal; } 
+ul, ol { list-style: none; }
+a { cursor: pointer;text-decoration: none; color: #555; }
+a:hover {color:green;}
+q:before, q:after { content: ''; }
+fieldset,img { border: none; } 
+button, input, select, textarea { font-size: 100%; }
+table { border-collapse: collapse; border-spacing: 0; }
+html{overflow-y: scroll; }
+
+
+body {background:#fff;color:#333;font-size:14px;}
+h1 {margin:10px 0 2px;}
+.wrap {margin:0 auto;width:760px;}
+p {margin:10px 0;}
+#jTabView {margin:60px auto;}
+h3 { margin:0 5px;padding:5px 0 0;background:url(img/repeatX.png) repeat-x 0 -26px; font-weight:400; }
+	h3 a, h3 em { display:inline-block; height:32px; vertical-align:middle;}
+		h3 em { padding:0 13px; height:26px; line-height:26px; border-right:1px solid #ccc;}
+		h3 em.end { border:0 none; }
+	h3 .curr { background:url(img/arrow-down.png) no-repeat center bottom; }
+		h3 .curr em {border:0 solid #E5AE05; border-width:0 1px; background:url(img/repeatX.png) repeat-x 0 -129px;}
+	.jtab-con,.con {padding:20px;}
+.tab {margin:15px 0;padding:0 10px;border-bottom:1px solid #aaa;height:30px;line-height:30px;}
+	.tab a {position:relative;bottom:-1px;display:inline-block;margin:0 5px;padding:0 10px;height:29px;
+			border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;}
+	.tab a:hover {color:red;}
+	.tab .curr {border:1px solid #aaa;border-width:1px 1px 0;background:#fff;}
+
+h5 {margin:10px;padding:10px;color:green;border-bottom:1px solid #ccc;}
+pre {margin:0;padding:10px 0;border-left:3px solid #6c6;background:#f8f8f8;}
+
+#accordion-ul {margin:0 0 20px;}
+#accordion-ul li {line-height:24px;}
+	#accordion-ul p {height:24px;background:#f8f8f8;border-bottom:2px solid #d6d6d6;cursor:pointer;}
+	#accordion-ul ul {padding-left:2em;}

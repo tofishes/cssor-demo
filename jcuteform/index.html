@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> ToFishes系列jQuery插件 - jCuteform表单美化插件</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="tofishes@163.com" />
+  <meta name="keywords" content="ToFishes,jQuery plugin" />
+  <meta name="description" content="ToFishes系列jQuery插件 - jCuteform表单美化插件" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jCuteform-tofishes-1.0.js"></script>
+  <link rel="stylesheet" href="http://demo.cssor.com/global.css" type="text/css" />
+  <link rel="stylesheet" href="jcuteform.css" type="text/css" />
+  <style type="text/css">
+body {height:100%;line-height:26px;height:600px;}
+h6 {margin:0 0 5px;}
+li {margin:10px 0;}
+form {margin:100px 0 0;}
+  </style>
+<script type="text/javascript">
+<!--
+$(function(){
+	eval($("pre").html());
+	$("h5").click(function(){
+		$(".jradio").append('<a class="radio" name="高级2">高级2</a>');
+	});
+});
+//-->
+</script>
+ </head>
+
+ <body>
+<div class="wrap">
+	<h1><a href="http://www.cssor.com/" title="ToFishes~">Made In ToFishes~</a></h1>
+	<p>点击打包下载：  <a href="jCuteForm-tofishes-1.0.zip">jQuery插件jCuteForm-1.0</a></p>
+	<!-- -->
+	<form class="jtab-con" action="" method="post">
+		<ul>
+			<!-- 下拉列表 -->
+			<li class="clear"><label class="meta">下拉类别：</label>
+				<div class="jselect meta">						
+					<p class="jtext"><input class="jvalue" type="hidden" name="" value="" /><em></em></p>
+					<div class="db-con">		                            
+						<ul>
+							<li class="option checked hide" name="请选择分类">--请选择分类--</li>
+							<li class="option" name="我的设计夹">我的设计夹</li>
+							<li class="option" name="我的摄影集">我的摄影集</li>
+							<li class="option" name="我的杂物架">我的杂物架</li>
+						</ul>
+					</div>
+				</div>
+				<span class="meta">子类别：</span>
+				<div class="jselect meta">                      
+					<p class="jtext"><input class="jvalue" type="hidden" name="" value="" /><em></em></p>
+					<div class="db-con">
+						<ul>
+							<li class="option" name="设计无限">设计无限</li>
+							<li class="option" name="摄影天下">摄影天下</li>
+							<li class="option" name="杂物堆放">杂物堆放</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li><label>多选色系：</label>
+				<em class="jcheckbox"><input class="jvalue" type="hidden" name="" value="" />
+					<a class="checkbox checked" name="all-color" />全部</a>
+					<a class="checkbox" name="red" />红色</a>
+					<a class="checkbox" name="green" />绿色</a>
+					<a class="checkbox" name="blue" />蓝色</a>
+				</em>
+			</li>
+			<li><label>单选等级：</label>
+				<em class="jradio"><input class="jvalue" type="hidden" name="" value="" />
+					<a class="radio  checked" name="初级">初级</a><a class="radio" name="高级">高级</a>					
+				</em>
+			</li>
+		</ul>
+	</form>
+	<h5>值改变预览：</h5>
+	<p id="preview" style="margin:10px;">暂未改变默认值</p>
+	<h5>调用代码：</h5>
+	<pre>
+	var preview = $("#preview");
+    //自定义需要，按参数默认值规范好的单选、多选及下拉，这样调用代码会少很多
+    $(function(){   
+        $(".jradio").jRadio({
+            input:".jvalue",
+            onchange:function(value){
+                preview.html("单选值被改变，当前选中值： " + value);
+            }
+        });
+        $(".jcheckbox").jCheckbox({
+            onchange:function(value){
+                preview.html("多选值被改变，当前选中值为以逗号相隔的字符串： \"" + value + "\"");
+            }		
+        });
+        $(".jselect").jSelect({
+            con:".db-con",
+            attr: "name", //这里不使用默认值，因为li的value属性只能被获取到数值类型
+            width: -1, //同显示区同宽
+            widthFix:6, //这里修正6像素宽度
+            onchange: function(value,index){
+                preview.html("下拉第" + index + "项被选中，当前选中值： " + value);
+            }
+        });
+    });
+	</pre>
+</div>
+ </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> ToFishes - jQuery插件jTabView 演示 </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="tofishes@163.com" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <!-- 引入样式 -->
+  <link rel="stylesheet" type="text/css" href="../global.css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jFlash-tofishes-1.0.js"></script>
+  <script type="text/javascript">
+  $(function(){
+	$("pre").each(function(i){
+        var code = $(this).html();
+        eval(code);
+	});
+  });
+  </script>
+  <style type="text/css">
+  #jFlash {height:26px;line-height:26px;}
+  #trigger {margin:20px 0;padding-top:10px;}
+  #trigger a {margin:0 10px 0 0;padding:5px 10px;border:1px solid #ccc;}
+  </style>
+ </head>
+
+ <body>
+ <div class="wrap">
+	<h1><a href="http://cssor.com">Made In ToFishes~</a></h1>
+  <p>打包下载链接：<a class="download" href="jFlash-tofishes-1.0.zip">jFlash-tofishes-1.0.zip</a></p>
+  <p>这是干虾米的插件，不用解释，直接看Demo吧！</p>
+  <p>多想想还有哪些Css属性可以做出想象的效果！</p>
+
+
+<div style="margin:30px;">
+    <p id="jFlash">Demo：这些文件将表现插件的效果！</p>
+
+    <p id="trigger">
+        <a name="color">红色闪烁</a>
+        <a name="background">背景闪烁</a>
+        <a name="group">组合了颜色与背景闪烁</a>
+        <a name="font">字体大小闪烁</a>
+        <a name="padding">内边距造成的横向震动</a>
+       
+    </p>
+    <p class="panel">And u can think more。。。</p>
+</div>
+ 
+<h6>调用的代码：</h6>
+<pre>
+    var css = {
+        color: {color: "#e00"}, //红色闪烁的css属性
+        background: {backgroundColor: "#080"}, //背景闪烁的css属性, 如果属性名称为background，则该元素事先需要先css定义好
+        group: {color: "#e00", background: "#080"}, //组合了颜色与背景闪烁
+        font: {fontSize: "20px"}, //修改字体大小
+        padding: {paddingLeft: "10px"} //内边距造成的横向震动
+    };
+    
+    $("#trigger a").click(function(){
+        var key = $(this).attr("name");
+        $("#jFlash").jFlash({
+            css: css[key] 
+        });
+    });
+
+    /*
+    //单独完整的调用是这样子的：（因为默认参数有时候是够用的，就不必再次设置了）
+        $("#jFlash").jFlash({
+            css: {color: "#e00"}, //and more css property
+            time: 100, // 每次闪烁间隔时间，单位是毫秒
+            count: 20, // 闪烁的总次数
+            onStop: function(_this){} //闪烁完了，回调，会传入当然闪烁元素的引用
+        });
+    */
+</pre>
+	
+ </div>
+ </body>
+</html>

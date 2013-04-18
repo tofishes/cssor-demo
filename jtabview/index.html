@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> ToFishes - jQuery插件jTabView 演示 </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="tofishes@163.com" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <!-- 引入样式 -->
+  <link rel="stylesheet" type="text/css" href="css/demo.css" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jTabView-tofishes-1.0.js"></script>
+  <script type="text/javascript">
+  $(function(){
+	$("#jTabView").jTabView({retain:1});
+	$("pre").each(function(i){
+		eval($(this).html());
+	});
+  });
+  </script>
+ </head>
+
+ <body>
+ <div class="wrap">
+	<h1><a href="http://cssor.com">Made In ToFishes~</a></h1>
+  <p>打包下载链接：<a href="jTabView-tofishes-2.1.zip">jTabView-tofishes-2.1.zip</a></p>
+  <p>计划升级版：抽离出切换的效果，直显切换，淡入淡出，滑动切换等等各种切换方式，同时支持自定义切换效果</p>
+  <p>这个插件还能怎样用？留给你解答吧！</p>
+  <!-- 这里用了id，注意，如果一个页面有多个选项卡，id是不能重名的，否则出错。这个必须包围选项卡标题和内容标签，因为逻辑上是一个整体 -->
+  <div id="jTabView">
+	<!-- 选项卡标题, 每个都有class名为jtab -->
+	<h3>
+		<a class="curr jtab" href="#d1" title=""><em>切换事件</em></a><a 
+		href="#d2" class="jtab"><em>自动切换</em></a><a 
+		href="#d3" class="jtab"><em>手风琴方式</em></a><a 
+		href="#d4" class="jtab"><em>记忆功能</em></a>
+	</h3>
+	<!-- 选项卡内容， 每个都有class名为jtab-con -->
+	<div class="jtab-con">
+		<div id="click">
+			<h5>默认是单击切换</h5>
+			<h4 class="tab"><a>选项卡1</a><a>选项卡2</a><a>选项卡3</a></h4>
+			<div class="con">
+				<p>选项卡1的内容</p>
+				<p>选项卡1的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡2的内容</p>
+				<p>选项卡2的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡3的内容</p>
+				<p>选项卡3的内容</p>
+			</div>
+			<h6>默认单击切换调用的代码：</h6>
+<pre>
+	$("#click").jTabView({
+		tab: "a",
+		con: ".con"
+	});
+</pre>
+		</div>
+		
+		<div id="mouseover">
+			<h5>鼠标悬浮切换</h5>
+			<h4 class="tab"><a>选项卡1</a><a>选项卡2</a><a>选项卡3</a></h4>
+			<div class="con">
+				<p>选项卡1的内容</p>
+				<p>选项卡1的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡2的内容</p>
+				<p>选项卡2的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡3的内容</p>
+				<p>选项卡3的内容</p>
+			</div>
+			<h6>鼠标悬浮切换调用的代码：</h6>
+<pre>
+	$("#mouseover").jTabView({
+		tab: "a",
+		con: ".con",
+		event: "mouseover", //鼠标悬浮事件
+		hoverTime: 400 //设置一个延迟，提高体验，默认是300ms
+	});
+</pre>
+		</div>
+		<h5>同理，event参数可以是任何jQuery事件</h5>
+	</div>
+	<div class="jtab-con">
+		<div id="auto">
+			<h5>设置3秒自动切换</h5>
+			<h4 class="tab"><a>选项卡1</a><a>选项卡2</a><a>选项卡3</a></h4>
+			<div class="con">
+				<p>选项卡1的内容</p>
+				<p>选项卡1的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡2的内容</p>
+				<p>选项卡2的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡3的内容</p>
+				<p>选项卡3的内容</p>
+			</div>
+			<h6>设置3秒自动切换的调用代码：</h6>
+<pre>
+	$("#auto").jTabView({
+		tab: "a",
+		con: ".con",
+		auto: 1, //启用自动切换
+		time: 3000 //切换间隔时间
+	});
+</pre>
+<p>想起焦点图切换了么，是的，这个可以作为一个焦点图切换，样式由你定</p>
+		</div>
+	</div>
+	<div class="jtab-con">
+		<div id="accordion">
+			<h5>手风琴式切换，连续单击同一个选项卡标题，内容会在显示与隐藏之间切换</h5>
+			<h4 class="tab"><a>选项卡1</a><a>选项卡2</a><a>选项卡3</a></h4>
+			<div class="con">
+				<p>选项卡1的内容</p>
+				<p>选项卡1的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡2的内容</p>
+				<p>选项卡2的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡3的内容</p>
+				<p>选项卡3的内容</p>
+			</div>
+			<h5>换一种风格：</h5>
+			<ul id="accordion-ul">
+				<li><p>分类1的标题</p>
+					<ul>
+						<li>分类1的子分类标题</li>
+						<li>分类1的子分类标题</li>
+					</ul>
+				<li>
+				<li><p class="curr">分类2的标题</p>
+					<ul>
+						<li>分类2的子分类标题</li>
+						<li>分类2的子分类标题</li>
+					</ul>
+				<li>
+				<li><p>分类3的标题</p>
+					<ul>
+						<li>分类3的子分类标题</li>
+						<li>分类3的子分类标题</li>
+					</ul>
+				<li>
+			</ul>
+
+			<h6>手风琴式切换调用的代码：</h6>
+<pre>
+	$("#accordion").jTabView({
+		tab: "a",
+		con: ".con",
+		accordion: 1 //启用手风琴方式
+	});
+	
+	$("#accordion-ul").jTabView({
+		tab: "p",
+		con: "ul",
+		accordion: 1 //启用手风琴方式
+	});
+</pre>
+		</div>
+	</div>
+	<div class="jtab-con">
+		<div id="retain">
+			<h5>开启记忆功能，依赖于jQuery Cookie插件，刷新页面依然保留当前的选项卡位置，可以设置过期时间</h5>
+			<h4 class="tab"><a>选项卡1</a><a>选项卡2</a><a>选项卡3</a></h4>
+			<div class="con">
+				<p>选项卡1的内容</p>
+				<p>选项卡1的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡2的内容</p>
+				<p>选项卡2的内容</p>
+			</div>
+			<div class="con">
+				<p>选项卡3的内容</p>
+				<p>选项卡3的内容</p>
+			</div>
+			<h6>开启记忆功能调用的代码：</h6>
+<pre>
+	$("#retain").jTabView({
+		tab: "a",
+		con: ".con",
+		retain: 1, //启用记忆防刷新功能
+		expires: 1 //设置过期时间，单位 天
+	});
+</pre>
+		</div>
+	</div>
+  </div>
+ </div>
+ </body>
+</html>

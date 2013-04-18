@@ -1,0 +1,12 @@
+/* 另外自备css reset，不知道css reset? Google一下 */
+.jfocus{ position:relative; overflow:hidden;}
+	.jfocus li { position:absolute; top:0; left:0;}		
+	.jfocus .infos, .jfocus .overlay, .jfocus .index { position:absolute; bottom:0;  z-index:2;  }
+		.jfocus .infos { left:0; padding-left:10px;  }
+			.jfocus .infos a, .jfocus .infos .desc {margin:0 0 10px;color:#ff0;}
+		/* overlay修改opacity属性可以更改透明度，ie则修改filter的opacity */
+		.jfocus .overlay { left:0; height: 60px; width:100%; filter:alpha(opacity=50);opacity:0.5; background:#000; z-index:1;}
+		.jfocus .index { padding:0 10px 10px; height: auto; right:0; text-align:right; }
+			.jfocus .index a { display:inline-block; margin:0 5px; color:#fff; font-weight:700; font-family:tahoma; }
+			.jfocus .index a.curr { color:#f00; }
+	.jfocus em {font-style: normal;  }

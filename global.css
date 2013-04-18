@@ -1,0 +1,28 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, 
+ul, ol, li, pre, form, fieldset, lengend, button, input, textarea,th, td {
+    margin: 0;  padding: 0; }
+body,button, input, select, textarea { font-family:宋体, Tahoma, Helvetica, Arial, sans-serif; }
+h2 ,h4{ font-size:14px; }
+h3,h5,h6 { font-size: 12px; }
+address, cite, em, dfn{ font-style: normal; } 
+ul, ol { list-style: none; }
+a { cursor: pointer;text-decoration: none; color: #555; }
+a:hover {color:green;}
+q:before, q:after { content: ''; }
+fieldset,img { border: none; } 
+button, input, select, textarea { font-size: 100%; }
+table { border-collapse: collapse; border-spacing: 0; }
+html{overflow-y: scroll; }
+body {background:#fff;line-height:1.5;color:#333;font-size:14px;}
+.wrap {margin:0 auto;width:760px;}
+h1 {margin:10px 0;}
+.tab {margin:15px 0;padding:0 10px;border-bottom:1px solid #aaa;height:30px;line-height:30px;}
+	.tab a {position:relative;bottom:-1px;display:inline-block;margin:0 5px;padding:0 10px;height:29px;
+			border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;}
+	.tab a:hover {color:red;}
+	.tab .curr {border:1px solid #aaa;border-width:1px 1px 0;background:#fff;}
+.clear {zoom:1}
+.clear:after {clear:both;content:"\20";display:block;}
+pre {margin:0;padding:10px 0;border-left:3px solid #6c6;background:#f8f8f8;}
+.panel {margin:10px 0;}
+.download {color:#090;text-decoration:underline;}
